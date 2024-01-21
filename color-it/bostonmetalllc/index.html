@@ -13,21 +13,192 @@
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="apple-touch-icon" href="../../icon.png">
 
   <link rel="stylesheet" href="../../css/normalize.css">
-  <link rel="stylesheet" href="../../css/main.css">
 
-  <meta name="theme-color" content="#fafafa">
+  <style>
+    #logoContainer {
+      width: 200px;
+      height: auto;
+      background-color: #27bce4;
+      padding: 30px;
+      border-radius: 0;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .centered-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 100vh;
+      align-items: center;
+      justify-items: center;
+      /* adjusted */
+    }
+
+    .control-section {
+      padding: .5rem;
+      text-align: center;
+      background-color: #ffffff;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="content">
-    <p>Boston Metal LLC</p>
+
+  <section class="control-section">
+    <label for="logocolor">Choose Logo Color:</label>
+    <input type="color" id="logocolor" value="#ffffff">
+  </section>
+
+  <section class="control-section">
+    <label for="bgcolor">Choose Background Color:</label>
+    <input type="color" id="bgcolor" value="#27bce4">
+  </section>
+
+  <section class="control-section">
+    <label for="pageColor">Choose Page Color:</label>
+    <input type="color" id="pageColor" value="#ffffff">
+  </section>
+
+  <section class="control-section">
+    <label for="paddingVal">Padding:</label>
+    <input type="range" min="1" max="200" value="30" class="slider" id="paddingVal">
+  </section>
+
+  <section class="control-section">
+    <label for="paddingVal">Border Radius:</label>
+    <input type="range" min="1" max="30" value="0" class="slider" id="borderRadiusVal">
+  </section>
+
+
+  <div class="centered-content">
+
+    <div id="logoContainer">
+
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" viewBox="0 0 305.48 448.9" xml:space="preserve" id="logo">
+        <style type="text/css">
+          .st0 {
+            fill: #FFFFFF;
+          }
+        </style>
+        <g>
+          <g>
+            <path class="st0" d="M1.68,380.07v-64.16h27.47c5.71,0,9.87,1.71,12.49,5.12c2.62,3.42,3.92,7.32,3.92,11.7
+       c0,3.2-0.76,6.09-2.28,8.67c-1.52,2.58-3.78,4.36-6.8,5.33c7,2.01,10.5,6.99,10.5,14.95c0,4.76-1.24,9.02-3.71,12.76
+       c-2.47,3.75-7.75,5.62-15.84,5.62H1.68z M16.98,340.49h7.69c1.93,0,3.29-0.58,4.08-1.74c0.79-1.16,1.19-2.4,1.19-3.72
+       c0-3.57-1.85-5.36-5.55-5.36h-7.41V340.49z M16.98,365.78h8.09c2.01,0,3.48-0.59,4.42-1.76c0.94-1.18,1.41-2.5,1.41-3.97
+       s-0.46-2.83-1.37-4.07c-0.91-1.24-2.58-1.86-5.01-1.86h-7.53V365.78z" />
+            <path class="st0" d="M77.23,381.06c-7.61,0-13.81-2.99-18.61-8.98c-4.8-5.99-7.19-13.99-7.19-24.02c0-9.59,2.29-17.51,6.88-23.76
+       c4.58-6.25,10.95-9.38,19.09-9.38c7.53,0,13.67,2.94,18.41,8.84c4.74,5.89,7.12,13.76,7.12,23.6c0,10.19-2.39,18.35-7.17,24.49
+       C90.95,377.99,84.78,381.06,77.23,381.06z M77.15,366.49c2.8,0,4.82-1.45,6.04-4.35s1.84-8.2,1.84-15.91
+       c0-11.16-2.52-16.74-7.57-16.74c-5.44,0-8.17,6.36-8.17,19.08C69.3,360.52,71.91,366.49,77.15,366.49z" />
+            <path class="st0" d="M104.34,361.5l15.42-3.29c1.29,5.17,4.62,7.76,9.99,7.76c4.17,0,6.26-1.32,6.26-3.95
+       c0-1.38-0.48-2.45-1.45-3.22c-0.96-0.77-2.69-1.45-5.17-2.04c-9.49-2.16-15.58-4.98-18.27-8.45c-2.69-3.48-4.04-7.57-4.04-12.27
+       c0-6.05,1.94-11.08,5.81-15.09s9.44-6.02,16.71-6.02c11.02,0,18.3,5.25,21.84,15.74l-13.75,4.94c-1.43-4.29-4.32-6.44-8.68-6.44
+       c-3.62,0-5.43,1.33-5.43,3.99c0,1.19,0.41,2.12,1.23,2.78c0.82,0.66,2.4,1.28,4.76,1.88c6.47,1.62,11.07,3.06,13.8,4.31
+       c2.72,1.25,4.99,3.39,6.82,6.41c1.82,3.03,2.73,6.59,2.73,10.7c0,6.49-2.22,11.75-6.66,15.78s-10.27,6.04-17.48,6.04
+       C115.57,381.06,107.43,374.54,104.34,361.5z" />
+            <path class="st0" d="M182.11,331.28v48.79h-15.74v-48.79h-11.22v-15.37h38.17v15.37H182.11z" />
+            <path class="st0" d="M221.43,381.06c-7.61,0-13.81-2.99-18.61-8.98c-4.8-5.99-7.19-13.99-7.19-24.02c0-9.59,2.29-17.51,6.88-23.76
+       c4.58-6.25,10.95-9.38,19.09-9.38c7.53,0,13.67,2.94,18.41,8.84c4.74,5.89,7.12,13.76,7.12,23.6c0,10.19-2.39,18.35-7.17,24.49
+       C235.15,377.99,228.98,381.06,221.43,381.06z M221.35,366.49c2.8,0,4.82-1.45,6.04-4.35s1.84-8.2,1.84-15.91
+       c0-11.16-2.52-16.74-7.57-16.74c-5.44,0-8.17,6.36-8.17,19.08C213.5,360.52,216.11,366.49,221.35,366.49z" />
+            <path class="st0"
+              d="M300.38,380.07h-13.52l-14.82-28.35c-1.9-3.64-3.82-8.05-5.75-13.25c0.87,4.14,1.31,7.65,1.31,10.53v31.07
+       h-13.48v-64.16h15.7l12.61,23.5c2.51,4.67,4.41,8.77,5.71,12.32c-0.85-5.48-1.27-11.09-1.27-16.83v-18.99h13.52V380.07z" />
+            <path class="st0" d="M50.48,394.24v54.05H37.49v-38.64l-8.43,38.64h-8.88l-8.76-38.64v38.64H0.93v-54.05h18.28l6.61,28.71
+       l6.31-28.71H50.48z" />
+            <path class="st0" d="M92.72,435.38v12.91H58.43v-54.05h34.29v12.47H72.15v7.84h16.63v12H72.15v8.83H92.72z" />
+            <path class="st0" d="M116.99,407.19v41.1h-13.25v-41.1h-9.45v-12.95h32.15v12.95H116.99z" />
+            <path class="st0" d="M153.07,448.29l-2.58-10.65h-12.21l-2.74,10.65h-11.36l14.07-54.05h14.79l14.29,54.05H153.07z M140.66,425.84
+       h7.37l-3.69-15.68L140.66,425.84z" />
+            <path class="st0" d="M203.5,435.02v13.26h-31.95v-54.05h13.99v40.78H203.5z" />
+            <path class="st0" d="M247.72,438.6v9.68h-23.33v-39.46h10.21v29.78H247.72z" />
+            <path class="st0" d="M274.61,438.6v9.68h-23.33v-39.46h10.21v29.78H274.61z" />
+            <path class="st0" d="M296.14,433.23l9.34,0.66c-0.44,4.84-1.95,8.55-4.52,11.13c-2.58,2.58-5.74,3.87-9.49,3.87
+       c-4.52,0-8.17-1.77-10.95-5.32c-2.78-3.55-4.17-8.44-4.17-14.69c0-6.19,1.32-11.18,3.95-14.98c2.63-3.8,6.3-5.7,11.02-5.7
+       c4.4,0,7.79,1.45,10.15,4.34c2.37,2.89,3.7,6.73,4.01,11.51l-9.53,0.61c0-2.64-0.43-4.55-1.28-5.72
+       c-0.85-1.18-1.86-1.76-3.01-1.76c-3.22,0-4.83,3.84-4.83,11.51c0,4.3,0.42,7.22,1.26,8.76c0.84,1.54,2.01,2.31,3.52,2.31
+       C294.3,439.76,295.81,437.58,296.14,433.23z" />
+          </g>
+          <g>
+            <path class="st0" d="M182.8,229.62c-7.89-6.21-19.48-11.65-34.75-16.32c25.75-8.51,38.63-20.85,38.63-37.04
+       c0-14.83-9.67-26.55-29.02-35.17c-19.35-8.62-47.98-12.93-85.89-12.93H0v172.32h93.12c32.09,0,57.03-4.33,74.83-12.99
+       c17.79-8.66,26.69-20.21,26.69-34.67C194.64,243.57,190.69,235.84,182.8,229.62z M73.76,162.83h7.96
+       c23.03,0,34.55,5.57,34.55,16.71c0,6.17-2.98,10.52-8.93,13.04c-5.95,2.52-16.05,3.78-30.28,3.78h-3.3V162.83z M109.96,258.53
+       c-6.41,2.67-17.11,4.01-32.13,4.01h-4.08v-37.26h9.12c24.46,0,36.69,6.48,36.69,19.42C119.57,251.25,116.37,255.86,109.96,258.53z
+       " />
+            <path class="st0" d="M85.55,86.05l37.25,21.84l12.34,7.89l7.36-4.71l42.44-25.02v43.52c20.84,12,31.78,27.98,31.78,46.71
+       c0,12.34-5.1,23.49-15.16,33.13c-0.81,0.78-1.66,1.55-2.54,2.31c2.34,1.51,4.52,3.06,6.55,4.65
+       c12.68,9.98,19.11,22.25,19.11,36.47c0,18.53-10.55,34.48-30.63,46.54h106.44V0H189.01l-53.88,39.49L81.67,0H0.04v106.11l0,0
+       h85.51" />
+          </g>
+        </g>
+      </svg>
+
+    </div>
+
   </div>
-  <script src="../../js/vendor/modernizr-3.11.2.min.js"></script>
-  <script src="../../js/plugins.js"></script>
-  <script src="../../js/main.js"></script>
+
+
+  <script>
+    const logoContainer = document.getElementById("logoContainer");
+    const svgElem = document.getElementsByTagName("svg")[0];
+
+    const logocolor = document.getElementById("logocolor");
+    const bgcolor = document.getElementById("bgcolor");
+    const paddingVal = document.getElementById("paddingVal");
+    const borderRadiusVal = document.getElementById("borderRadiusVal");
+
+
+    paddingVal.addEventListener("change", function () {
+      logoContainer.style.padding = paddingVal.value + "px";
+    }, false);
+
+    borderRadiusVal.addEventListener("change", function () {
+      console.log(borderRadiusVal)
+      logoContainer.style.borderRadius = borderRadiusVal.value + "%";
+      logoContainer.style.MozBorderRadius = borderRadiusVal.value + "%";
+      logoContainer.style.WebkitBorderRadius = borderRadiusVal.value + "%";
+
+      if (borderRadiusVal.value === '30') {
+        logoContainer.style.height = '200px';
+
+        logoContainer.style.borderRadius = '100%';
+        logoContainer.style.MozBorderRadius = '100%';
+        logoContainer.style.WebkitBorderRadius = '100%';
+
+      }
+      else {
+        svgElem.style.transform = '';
+        logoContainer.style.height = 'auto';
+        svgElem.style.height = 'auto';
+
+      }
+
+    }, false);
+
+    bgcolor.oninput = function () {
+      logoContainer.style.backgroundColor = bgcolor.value;
+    }
+
+    pageColor.oninput = function () {
+      document.getElementsByTagName("body")[0].style.backgroundColor = pageColor.value;
+    }
+
+    logocolor.oninput = function () {
+      for (let element of document.getElementsByClassName("st0")) {
+        element.style.fill = logocolor.value;
+      }
+      // logoContainer.style.color = logocolor.value;
+    }
+
+
+  </script>
 
 </body>
 
