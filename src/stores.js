@@ -10,7 +10,7 @@ export const time = readable(new Date(), function start(set) {
 	};
 });
 
-const endDate = new Date('April 29, 2024 00:00:00');
+const endDate = new Date('September 11, 2024 00:00:00');
 
 export const countDown = derived(
 	time,
