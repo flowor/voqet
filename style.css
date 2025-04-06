@@ -1,0 +1,65 @@
+:root {
+  --acc-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --acc-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+  --base-delay: 255ms;
+  --variable-delay: 405ms;
+}
+
+main {
+  background-image: url("main.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+html {
+  background: #fef6ec;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #423f3c;
+}
+
+header h1 {
+  font-weight: 800;
+  font-size: 52px;
+  animation: anim-in 0.8s var(--acc-bounce) 1 forwards;
+  animation-delay: var(--base-delay);
+  opacity: 0;
+}
+
+header p {
+  font-weight: 300;
+  font-size: 16px;
+  text-align: right;
+  animation: anim-in 2s var(--acc-bounce) 1 forwards;
+  animation-delay: var(--variable-delay);
+  opacity: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+header {
+  line-height: 8px;
+}
+
+@keyframes anim-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.89);
+  }
+  100% {
+    opacity: 1;
+  }
+}
