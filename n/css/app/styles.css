@@ -1,0 +1,136 @@
+/**************************************************
+    basic reset
+**************************************************/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+body {
+    box-sizing: border-box;
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/**************************************************
+    small screens and up
+**************************************************/
+
+@media only screen {
+
+    /*
+         base typography
+    */
+    body {
+        background: #fff;
+        font-family: 'Quicksand', sans-serif;
+        color: #777;
+        font-size: 16px;
+        line-height: 19px;
+        overflow-y: scroll;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: #333;
+        margin: 0 0 16px 0;
+        font-weight: 500;
+        text-transform: lowercase;
+    }
+
+    h1 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+
+    a {
+        color: #0081c6;
+    }
+
+    a:hover, a:focus {
+        color: #30a1e6;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    select {
+        font-family: 'Quicksand', sans-serif;
+        padding: 0.6em 0.5em;
+        border: 1px solid #ddd;
+    }
+
+    button, .button {
+        font-family: 'Quicksand', sans-serif;
+    }
+
+
+    .puzzle {
+        overflow: auto;
+    }
+
+}
+
+.wrapper {
+    opacity: 0;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.loader-wrapper {
+display: flex;
+justify-content: center;
+align-items: center;
+margin: auto;
+height: 100vh;
+font-size: 3em;
+}
+
+.loader-wrapper button {
+     background-color: transparent;
+  padding: 10px 20px;
+  margin: 30px;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  
+  /* The magic for the hand-drawn look */
+  border-radius: 60% 40% 40% 60% / 50% 60% 40% 50%;
+  transition: all 0.3s ease; /* Smooth transition for hover */
+}
+
+.loader-wrapper button:hover {
+  border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; /* Slightly less irregular on hover */
+  box-shadow: 4px 4px 0px #333; /* Add a shadow to make it pop */
+  transform: translate(-2px, -2px); /* Shift button slightly for 3D effect */
+}
+
+.loader-wrapper button:active {
+  box-shadow: 0px 0px 0px #333; /* Remove shadow to simulate pressing down */
+  transform: translate(0, 0); /* Reset position */
+}
