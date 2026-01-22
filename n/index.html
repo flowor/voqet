@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<title>For Naomi</title>
 
@@ -31,7 +31,9 @@
 			</div>
 
 		</main>
+		<div style="text-align: center; margin: 0 auto;padding: 20px;">
 		<a onclick="clearHist()">Clear History</a>
+		</div>
 		<!-- <div class="generate-controls">
 			<div data-nonogram-generate-controls></div>
 		</div> -->
@@ -42,10 +44,11 @@
 
 	<script>
 
-		const gamemusic = new Audio("game.mp3");
-		const winmusic = new Audio("win.mp3");
+		const gamemusic = new Audio("game.m4a");
+		const winmusic = new Audio("win.m4a");
 		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 		gamemusic.loop = false;
+		winmusic.loop = true;
 		gamemusic.currentTime = 0;
 
 function clearHist() {
@@ -56,8 +59,6 @@ function clearHist() {
 		function start() {
 
 			document.getElementById("mainmenu").remove();
-
-			setTimeout(() => {
 				const audioContext = new AudioContext();
 				// 3. Create a GainNode to control volume
 				const gainNode = audioContext.createGain();
@@ -72,12 +73,10 @@ function clearHist() {
 
 				// Define the end time for the fade
 				const now = audioContext.currentTime;
-				const fadeInEndTime = now + 3; // duration in seconds
+				const fadeInEndTime = now + 7; // duration in seconds
 
 				// Use linearRampToValueAtTime to smoothly increase the volume to 1
 				gainNode.gain.linearRampToValueAtTime(1, fadeInEndTime);
-
-			}, 2000);
 
 
 

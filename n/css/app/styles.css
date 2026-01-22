@@ -37,7 +37,6 @@ table {
         color: #777;
         font-size: 16px;
         line-height: 19px;
-        overflow-y: scroll;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -74,10 +73,6 @@ table {
         font-family: 'Quicksand', sans-serif;
     }
 
-
-    .puzzle {
-        overflow: auto;
-    }
 
 }
 
