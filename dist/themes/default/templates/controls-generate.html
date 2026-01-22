@@ -1,0 +1,74 @@
+<!--
+
+
+
+-->
+
+<div class="nonogram-generate-controls">
+
+	<fieldset style="display:none" >
+		<legend>Generate Random Puzzle:</legend>
+
+		<div class="control-group">
+
+			<select data-nonogram-generate-width class="width" aria-label="Width" id="nonogram-generate-width">
+				<template data-nonogram-generate-width-options>
+					<option></option>
+				</template>
+			</select>
+
+			<label class="x">x</label>
+
+			<select data-nonogram-generate-height class="height" aria-label="Height">
+				<template data-nonogram-generate-height-options>
+					<option></option>
+				</template>
+			</select>
+
+			<button data-nonogram-generate-button class="nonogram-button button icon generate">Generate</button>
+
+		</div>
+	</fieldset>
+
+	<fieldset style="display:none" >
+		<legend>Load Example:</legend>
+
+		<div class="control-group">
+
+			<select data-nonogram-choose-predefined aria-label="Load an Example">
+				<option value="">Choose</option>
+				<template data-nonogram-choose-predefined-options>
+					<option></option>
+				</template>
+			</select>
+
+		</div>
+	</fieldset>
+
+	<fieldset style="display:none" >
+		<legend>Board Size:</legend>
+
+		<div class="control-group">
+
+			<select data-nonogram-board-size aria-label="Board Size">
+				<template data-nonogram-board-size-options>
+					<option></option>
+				</template>
+			</select>
+
+		</div>
+	</fieldset>
+
+
+	<fieldset>
+
+		<div class="control-group">
+
+			<button data-nonogram-game-reset class="nonogram-button button icon reset">Reset</button>
+			<button style="display:none" class="nonogram-button button icon solve">Solve</button>
+
+		</div>
+	</fieldset>
+
+
+</div>

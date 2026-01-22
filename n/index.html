@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>For Naomi</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+	<link rel="stylesheet" href="css/app/styles.css" type="text/css" />
+
+</head>
+
+<body>
+
+	<div class="loader-wrapper" id="mainmenu">
+
+		<div>Hi Naomi 👋 <br> <button onclick="start()">Tap to Enter</button></div>
+	</div>
+
+	<div id="page">
+		<main>
+
+			<div class="wrapper">
+
+				<div class="puzzle">
+					<div data-nonogram-puzzle-grid></div>
+				</div>
+
+			</div>
+
+		</main>
+		<div style="text-align: center; margin: 0 auto;padding: 20px;">
+		<a onclick="clearHist()">Clear History</a>
+		</div>
+		<!-- <div class="generate-controls">
+			<div data-nonogram-generate-controls></div>
+		</div> -->
+	</div>
+
+
+	<script src="../dist/nonogram.min.js"></script>
+
+	<script>
+
+		const gamemusic = new Audio("game.m4a");
+		const winmusic = new Audio("win.m4a");
+		const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+		gamemusic.loop = false;
+		winmusic.loop = true;
+		gamemusic.currentTime = 0;
+
+function clearHist() {
+	const x = confirm("Clear History? Refresh to start over.");
+	if (x) localStorage.removeItem('puzzleCells');
+}
+
+		function start() {
+
+			document.getElementById("mainmenu").remove();
+				const audioContext = new AudioContext();
+				// 3. Create a GainNode to control volume
+				const gainNode = audioContext.createGain();
+				const track = audioContext.createMediaElementSource(gamemusic);
+
+				// 4. Connect the nodes (source -> gain -> destination)
+				track.connect(gainNode);
+				gainNode.connect(audioContext.destination);
+
+				gainNode.gain.value = 0;
+				gamemusic.play();
+
+				// Define the end time for the fade
+				const now = audioContext.currentTime;
+				const fadeInEndTime = now + 7; // duration in seconds
+
+				// Use linearRampToValueAtTime to smoothly increase the volume to 1
+				gainNode.gain.linearRampToValueAtTime(1, fadeInEndTime);
+
+
+
+
+
+
+			const creator = new Nonogram.Creator();
+			const hints = {
+				row: [[3, 3], [5, 5], [11], [13], [1, 2, 2, 1], [2, 2, 1, 1, 1], [2, 3, 2, 1, 1], [13], [11], [9], [7], [5], [3]],
+				column: [[5], [3, 4], [4, 3], [4, 6], [12], [4, 7], [2, 6], [4, 7], [12], [4, 4], [4, 5], [3, 2], [5]]
+			};
+
+			const puzzle = creator.createFromHints(hints);
+			const gui = new Nonogram.Gui('../dist/themes/default');
+
+			const puzzleCellsString = localStorage.getItem('puzzleCells');
+			const savedCellsState = puzzleCellsString ? JSON.parse(puzzleCellsString) : null;
+
+			if (savedCellsState)
+				puzzle.cells = savedCellsState;
+
+			gui.draw(puzzle);
+		}
+	</script>
+
+
+</body>
+
+</html>
